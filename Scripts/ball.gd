@@ -22,8 +22,6 @@ func _physics_process(delta: float) -> void:
 			var bounce_velocity = velocity.bounce(collision.get_normal())
 			var current_angle = rad_to_deg(bounce_velocity.angle())
 			
-			print(str(current_angle))
-			
 			var min_y_angle = 15.0
 			
 			if abs(current_angle) > (180 - min_y_angle):
@@ -34,7 +32,7 @@ func _physics_process(delta: float) -> void:
 			
 			if collision_object.has_method("handle_hit"):
 				collision_object.handle_hit(collision.get_position())
-
+ 
 
 func play_game():
 	GameManager.started = true
