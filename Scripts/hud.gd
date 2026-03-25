@@ -7,7 +7,7 @@ extends Control
 
 
 func _process(delta: float) -> void:
-	label_points.text = "PONTOS: " + str(GameManager.points)
-	label_record.text = "RECORDE: " + str(GameManager.record)
-	label_lives.text = "VIDAS: " + str(GameManager.lives)
+	label_points.text = "POINTS " + str(GameManager.points)
+	label_record.text = "RECORD " + str(GameManager.record)
+	label_lives.text = "LIVES " + str(GameManager.lives)
 	label_level.text = "LEVEL " + str(GameManager.current_level)
