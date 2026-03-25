@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cp8dtwfdki8yx"]
+
+[ext_resource type="Script" uid="uid://tv42kqd7mig5" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://cne881qb81bvu" path="res://Sprites/Player.png" id="1_v0iea"]
+[ext_resource type="AudioStream" uid="uid://u1pk634vyuje" path="res://Sounds/shoot.wav" id="3_6t5aa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvnsp"]
+size = Vector2(24, 100)
+
+[node name="Player" type="CharacterBody2D" unique_id=1104202221 node_paths=PackedStringArray("shoot_power_up_timer")]
+collision_mask = 34
+script = ExtResource("1_cvnsp")
+shoot_power_up_timer = NodePath("ShootPowerUpTimer")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=920180491]
+texture = ExtResource("1_v0iea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1035718697]
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_cvnsp")
+
+[node name="ShootPowerUpTimer" type="Timer" parent="." unique_id=727227782]
+wait_time = 0.5
+
+[node name="AudioShoot" type="AudioStreamPlayer2D" parent="." unique_id=1563819068]
+stream = ExtResource("3_6t5aa")
+volume_db = -15.0
+
+[connection signal="timeout" from="ShootPowerUpTimer" to="." method="_on_shoot_power_up_timer_timeout"]

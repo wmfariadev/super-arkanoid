@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://djo748gioeia6"]
+
+[ext_resource type="Script" uid="uid://cevwj314ubw7o" path="res://Scripts/enviorement.gd" id="1_hp8of"]
+[ext_resource type="Texture2D" uid="uid://b3w6jgmaetqph" path="res://Sprites/Background.png" id="1_r30ii"]
+[ext_resource type="Shader" uid="uid://yf710rj8wphv" path="res://Shaders/background.gdshader" id="2_bepfb"]
+[ext_resource type="PackedScene" uid="uid://ba2eg5oa7ybu2" path="res://Scenes/hud.tscn" id="3_4m4nf"]
+[ext_resource type="AudioStream" uid="uid://iqsfhyg0gn7v" path="res://Sounds/death.wav" id="5_im62j"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_im62j"]
+shader = ExtResource("2_bepfb")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r30ii"]
+size = Vector2(20, 480)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hp8of"]
+size = Vector2(680, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4m4nf"]
+size = Vector2(680, 37)
+
+[node name="Enviorement" type="Node2D" unique_id=2083953176]
+script = ExtResource("1_hp8of")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1890345935]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_im62j")
+texture = ExtResource("1_r30ii")
+centered = false
+
+[node name="LeftWall" type="StaticBody2D" parent="." unique_id=425539373]
+collision_layer = 32
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall" unique_id=534100075]
+position = Vector2(-10, 240)
+shape = SubResource("RectangleShape2D_r30ii")
+
+[node name="RightWall" type="StaticBody2D" parent="." unique_id=1256132580]
+collision_layer = 32
+collision_mask = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall" unique_id=1037461511]
+position = Vector2(650, 240)
+shape = SubResource("RectangleShape2D_r30ii")
+
+[node name="TopWall" type="StaticBody2D" parent="." unique_id=1677602639]
+position = Vector2(1, -1)
+collision_layer = 32
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall" unique_id=2056545727]
+position = Vector2(319, 6.5)
+shape = SubResource("RectangleShape2D_hp8of")
+
+[node name="Role" type="Area2D" parent="." unique_id=895548750]
+position = Vector2(-7, 461)
+collision_layer = 64
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Role" unique_id=983793220]
+position = Vector2(327, 37.5)
+shape = SubResource("RectangleShape2D_4m4nf")
+debug_color = Color(0.92032737, 0.23529169, 0.40292034, 0.41960785)
+
+[node name="ResetTimer" type="Timer" parent="." unique_id=2048763649]
+wait_time = 2.0
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=343211639]
+
+[node name="Hud" parent="CanvasLayer" unique_id=1177896310 instance=ExtResource("3_4m4nf")]
+metadata/_edit_horizontal_guides_ = [452.0]
+
+[node name="AudioDeath" type="AudioStreamPlayer2D" parent="." unique_id=1746616430]
+stream = ExtResource("5_im62j")
+
+[connection signal="body_entered" from="Role" to="." method="_on_role_body_entered"]
+[connection signal="timeout" from="ResetTimer" to="." method="_on_reset_timer_timeout"]

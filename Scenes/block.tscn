@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://co1jhbsbvvq7w"]
+
+[ext_resource type="Script" uid="uid://gv60cpca66r" path="res://Scripts/block.gd" id="1_ejx3s"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8o1l4"]
+size = Vector2(80, 24)
+
+[node name="Block" type="StaticBody2D" unique_id=1829492730]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_ejx3s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=861015424]
+position = Vector2(40, 12)
+shape = SubResource("RectangleShape2D_8o1l4")
+
+[node name="Timer" type="Timer" parent="." unique_id=1259820266]
