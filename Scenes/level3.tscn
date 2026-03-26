@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://cqyacs5dkrlo5"]
+
+[ext_resource type="Script" uid="uid://q08hohdot3gj" path="res://Scripts/level_3.gd" id="1_jaajx"]
+[ext_resource type="AudioStream" uid="uid://cld6fkcy8fe62" path="res://Sounds/level3.ogg" id="2_nm84x"]
+[ext_resource type="FontFile" uid="uid://cdlvuo45ixa5j" path="res://Fonts/Flatwheat-Regular.ttf" id="3_d77hw"]
+[ext_resource type="Texture2D" uid="uid://b3w6jgmaetqph" path="res://Sprites/Background.png" id="3_nm84x"]
+[ext_resource type="FontFile" uid="uid://yga4c3bqonna" path="res://Fonts/Flatwheat-Upright.ttf" id="4_jaajx"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mrxql"]
+font = ExtResource("3_d77hw")
+font_size = 48
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 0.69411767)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qrg6c"]
+font = ExtResource("4_jaajx")
+font_size = 22
+
+[node name="Level3" type="Node2D" unique_id=42577257]
+script = ExtResource("1_jaajx")
+
+[node name="AudioBG" type="AudioStreamPlayer2D" parent="." unique_id=1534677605]
+stream = ExtResource("2_nm84x")
+autoplay = true
+
+[node name="Background" type="Sprite2D" parent="." unique_id=232687941]
+position = Vector2(320, 240)
+texture = ExtResource("3_nm84x")
+
+[node name="Control" type="Control" parent="." unique_id=695356319]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LabelCongrats" type="Label" parent="Control" unique_id=809743565]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 198.0
+offset_right = 525.0
+offset_bottom = 259.0
+text = "CONGRATULATIONS!"
+label_settings = SubResource("LabelSettings_mrxql")
+
+[node name="Label" type="Label" parent="Control" unique_id=817827201]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 279.0
+offset_right = 434.0
+offset_bottom = 306.0
+text = "Press Space to new game"
+label_settings = SubResource("LabelSettings_qrg6c")

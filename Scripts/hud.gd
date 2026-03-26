@@ -6,7 +6,7 @@ extends Control
 @onready var label_level: Label = $LabelLevel
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	label_points.text = "POINTS " + str(GameManager.points)
 	label_record.text = "RECORD " + str(GameManager.record)
 	label_lives.text = "LIVES " + str(GameManager.lives)

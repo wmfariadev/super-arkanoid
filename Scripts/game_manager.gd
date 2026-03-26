@@ -56,7 +56,7 @@ func change_level():
 		var next_scene = "res://Scenes/level" + str(current_level) + ".tscn"
 		get_tree().change_scene_to_file(next_scene)
 	else:
-		print("fim de jogo")
+		get_tree().change_scene_to_file("res://Scenes/level3.tscn")
 		
 func reset_current_level():
 	current_level = 1

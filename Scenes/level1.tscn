@@ -25,7 +25,7 @@ position = Vector2(320, 445)
 position = Vector2(319, 417)
 
 [node name="RedBlock" type="Node2D" parent="." unique_id=1474336431]
-position = Vector2(0, 24)
+position = Vector2(0, -24)
 
 [node name="Block1" parent="RedBlock" unique_id=1829492730 instance=ExtResource("4_y4dr7")]
 position = Vector2(0, 168)
@@ -84,7 +84,7 @@ texture = ExtResource("5_didp7")
 centered = false
 
 [node name="PurpleBlock" type="Node2D" parent="." unique_id=660791960]
-position = Vector2(0, 24)
+position = Vector2(0, -24)
 
 [node name="Block9" parent="PurpleBlock" unique_id=293656349 instance=ExtResource("4_y4dr7")]
 position = Vector2(0, 144)
@@ -143,7 +143,7 @@ texture = ExtResource("6_2a60c")
 centered = false
 
 [node name="GreenBlock" type="Node2D" parent="." unique_id=633071869]
-position = Vector2(0, 24)
+position = Vector2(0, -24)
 
 [node name="Block17" parent="GreenBlock" unique_id=1290356594 instance=ExtResource("4_y4dr7")]
 position = Vector2(0, 120)
@@ -202,7 +202,7 @@ texture = ExtResource("7_4iphx")
 centered = false
 
 [node name="BlueBlock" type="Node2D" parent="." unique_id=492047436]
-position = Vector2(0, 24)
+position = Vector2(0, -24)
 
 [node name="Block25" parent="BlueBlock" unique_id=1037972784 instance=ExtResource("4_y4dr7")]
 position = Vector2(0, 96)
@@ -261,7 +261,7 @@ texture = ExtResource("8_4iphx")
 centered = false
 
 [node name="YellowBlock" type="Node2D" parent="." unique_id=1426486897]
-position = Vector2(0, 24)
+position = Vector2(0, -24)
 
 [node name="Block33" parent="YellowBlock" unique_id=1807617445 instance=ExtResource("4_y4dr7")]
 position = Vector2(0, 72)
